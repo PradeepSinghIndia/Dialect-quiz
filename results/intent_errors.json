@@ -1,0 +1,50 @@
+[
+  {
+    "text": "and thats all thank you and good bye",
+    "intent": "thankyou",
+    "intent_prediction": {
+      "name": "goodbye",
+      "confidence": 0.5446152091026306
+    }
+  },
+  {
+    "text": "um thank you good bye",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "thankyou",
+      "confidence": 0.5525354743003845
+    }
+  },
+  {
+    "text": "okay cool uh good bye thank you",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "thankyou",
+      "confidence": 0.5864622592926025
+    }
+  },
+  {
+    "text": "okay thank you good bye",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "thankyou",
+      "confidence": 0.5808520913124084
+    }
+  },
+  {
+    "text": "you rock",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "thankyou",
+      "confidence": 0.44988101720809937
+    }
+  },
+  {
+    "text": "thank you and good bye",
+    "intent": "goodbye",
+    "intent_prediction": {
+      "name": "thankyou",
+      "confidence": 0.5124557018280029
+    }
+  }
+]

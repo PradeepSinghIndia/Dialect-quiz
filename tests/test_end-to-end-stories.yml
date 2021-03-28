@@ -1,0 +1,77 @@
+version: "2.0"
+stories:
+- story: happy path
+  steps:
+  - intent: greet
+    user: |-
+      howdy
+  - action: utter_start_quiz
+  - intent: affirm
+    user: |-
+      sure
+  - action: elicitation_form
+  - active_loop: elicitation_form
+  - intent: inform
+    user: |-
+      I'd say yard sale
+  - slot_was_set:
+    - bug: pill bug
+  - slot_was_set:
+    - beverage: soda
+  - slot_was_set:
+    - second_person_plural: y'all
+  - slot_was_set:
+    - cot_caught: different
+  - slot_was_set:
+    - rain_sun: I have no term or expression for this
+  - slot_was_set:
+    - crawfish: crawfish
+  - slot_was_set:
+    - halloween: I have no word for this
+  - slot_was_set:
+    - sandwich: sub
+  - slot_was_set:
+    - road_meet_in_circle: rotary
+  - slot_was_set:
+    - shoes: shoes
+  - slot_was_set:
+    - highway: highway
+  - slot_was_set:
+    - second_syllabe: with the vowel in jam  
+  - slot_was_set:
+    - yard_sale: yard sale
+  - slot_was_set:
+    - rubbernecking: rubbernecking
+  - slot_was_set:
+    - frosting: frosting
+  - slot_was_set:
+    - lawyer: boy
+  - slot_was_set:
+    -  mary_merry_marry: all three are pronounced differently
+  - slot_was_set:
+    - firefly: firefly
+  - slot_was_set:
+    - school_college: gut
+  - slot_was_set:
+    - brew_thru: brew thru
+  - slot_was_set:
+    - water_fountain: water fountain
+  - active_loop: null
+  - action: utter_slots_values
+  - slot_was_set:
+    - dialect: dialect class. results
+  - action: utter_dialect_value
+  - intent: thankyou
+    user: |-
+      cool, thanks
+  - action: utter_noworries
+- story: no quiz
+  steps:
+  - intent: greet
+    user: |-
+      hello
+  - action: utter_start_quiz
+  - intent: deny
+    user: |-
+      nope
+  - action: utter_noworries

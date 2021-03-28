@@ -1,0 +1,82 @@
+[
+  {
+    "text": "potato bug",
+    "entities": [
+      {
+        "start": 0,
+        "end": 10,
+        "value": "potato bug",
+        "entity": "bug"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "soda",
+    "entities": [
+      {
+        "start": 0,
+        "end": 4,
+        "value": "soda",
+        "entity": "beverage"
+      }
+    ],
+    "predicted_entities": []
+  },
+  {
+    "text": "y'all",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "second_person_plural",
+        "start": 0,
+        "end": 5,
+        "confidence_entity": 0.7526626586914062,
+        "value": "y'all",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "you",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "second_person_plural",
+        "start": 0,
+        "end": 3,
+        "confidence_entity": 0.6744996905326843,
+        "value": "you",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "you guys",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "second_person_plural",
+        "start": 0,
+        "end": 8,
+        "confidence_entity": 0.8545598387718201,
+        "value": "you guys",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  },
+  {
+    "text": "coke",
+    "entities": [],
+    "predicted_entities": [
+      {
+        "entity": "beverage",
+        "start": 0,
+        "end": 4,
+        "confidence_entity": 0.49987754225730896,
+        "value": "coke",
+        "extractor": "DIETClassifier"
+      }
+    ]
+  }
+]

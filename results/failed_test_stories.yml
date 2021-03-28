@@ -1,0 +1,57 @@
+version: "2.0"
+stories:
+- story: happy path (C:\Users\Public\Documents\Wondershare\CreatorTemp\tmp7lh2kijy\8086f12f286a486e868c9031d4fd1c9c_test_end-to-end-stories.yml)
+  steps:
+  - intent: greet
+  - action: utter_start_quiz
+  - intent: affirm
+  - action: elicitation_form
+  - active_loop: elicitation_form
+  - intent: inform
+  - slot_was_set:
+    - bug: pill bug
+  - slot_was_set:
+    - beverage: soda
+  - slot_was_set:
+    - second_person_plural: y'all
+  - slot_was_set:
+    - cot_caught: different
+  - slot_was_set:
+    - rain_sun: I have no term or expression for this
+  - slot_was_set:
+    - crawfish: crawfish
+  - slot_was_set:
+    - halloween: I have no word for this
+  - slot_was_set:
+    - sandwich: sub
+  - slot_was_set:
+    - side_road: access road
+  - slot_was_set:
+    - shoes: tennis shoes
+  - slot_was_set:
+    - highway: highway
+  - slot_was_set:
+    - yard_sale: yard sale
+  - slot_was_set:
+    - rubbernecking: rubbernecking
+  - slot_was_set:
+    - frosting: frosting
+  - slot_was_set:
+    - lawyer: boy
+  - slot_was_set:
+    - kitty_corner: kitty-corner
+  - slot_was_set:
+    - firefly: firefly
+  - slot_was_set:
+    - verge: verge
+  - slot_was_set:
+    - brew_thru: brew thru
+  - slot_was_set:
+    - water_fountain: water fountain
+  - active_loop: null
+  - action: utter_slots_values  # predicted: utter_iamabot
+  - slot_was_set:
+    - dialect: dialect class. results
+  - action: utter_dialect_value  # predicted: detect_dialect
+  - intent: thankyou
+  - action: utter_noworries

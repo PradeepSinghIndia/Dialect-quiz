@@ -1,0 +1,318 @@
+version: "2.0"
+intents:
+  - chitchat:
+      use_entities: []
+  - inform
+  - affirm
+  - deny
+  - stop
+  - thankyou
+  - greet
+  - bot_challenge
+  - goodbye
+entities:
+  - bug
+  - beverage
+  - second_person_plural
+  - mary_merry_marry
+  - cot_caught
+  - yard_sale
+  - halloween
+  - sandwich
+  - road_meet_in_circle
+  - shoes
+  - highway
+  - rain_sun
+  - rubbernecking
+  - frosting
+  - firefly
+  - brew_thru
+  - water_fountain
+  - school_college
+  - freight
+  - second_syllabe
+  - wild_cat
+  - crawfish
+
+slots:
+  bug:
+    type: any
+    influence_conversation: false
+    auto_fill: false
+  beverage:
+    type: any
+    influence_conversation: false
+    auto_fill: false
+  second_person_plural:
+    type: any
+    influence_conversation: false
+    auto_fill: false
+  mary_merry_marry:
+    type: any
+    influence_conversation: false
+    auto_fill: false
+  cot_caught:
+    type: any
+    influence_conversation: false
+    auto_fill: false
+  yard_sale:
+    type: any
+    influence_conversation: false
+    auto_fill: false
+  halloween:
+    type: any
+    influence_conversation: false
+    auto_fill: false
+  sandwich:
+    type: any
+    influence_conversation: false
+    auto_fill: false
+  road_meet_in_circle:
+    type: any
+    influence_conversation: false
+    auto_fill: false
+  shoes:
+    type: any
+    influence_conversation: false
+    auto_fill: false
+  highway:
+    type: any
+    influence_conversation: false
+    auto_fill: false
+  rain_sun:
+    type: any
+    influence_conversation: false
+    auto_fill: false
+  rubbernecking:
+    type: any
+    influence_conversation: false
+    auto_fill: false
+  frosting:
+    type: any
+    influence_conversation: false
+    auto_fill: false
+  firefly:
+    type: any
+    influence_conversation: false
+    auto_fill: false
+  brew_thru:
+    type: any
+    influence_conversation: false
+    auto_fill: false
+  water_fountain:
+    type: any
+    influence_conversation: false
+    auto_fill: false
+  school_college:
+    type: any
+    influence_conversation: false
+    auto_fill: false
+  freight:
+    type: any
+    influence_conversation: false
+    auto_fill: false
+  second_syllabe:
+    type: any
+    influence_conversation: false
+    auto_fill: false
+  wild_cat:
+    type: any
+    influence_conversation: false
+    auto_fill: false
+  crawfish:
+    type: any
+    influence_conversation: false
+    auto_fill: false
+  dialect:
+    type: any
+    influence_conversation: false
+
+responses:
+  utter_start_quiz:
+    - text:
+        Hi! Do you want to take a quiz to learn more about where in the United States
+        people talk the most like you? Before you get started, you should know that
+        this quiz is being developed as part of a livecoding project. Any input you
+        share may be seen live on stream.
+  utter_submit:
+    - text: All done!
+  utter_slots_values:
+    - text:
+        "Here are your answers:\n{bug}\n{beverage}\n{second_person_plural}\n {mary_merry_marry}\n
+        {cot_caught}\n {yard_sale}\n  {halloween}\n {sandwich}\n
+        {road_meet_in_circle}\n
+        {shoes}\n {highway}\n {rain_sun}\n {rubbernecking}\n
+        {frosting}\n {firefly}\n {brew_thru}\n
+        {water_fountain}\n {school_college}\n {freight}\n
+        {second_syllabe}\n {wild_cat}\n {crawfish}"
+  utter_noworries:
+    - text: You are welcome :)
+  utter_goodbye:
+    - text: Bye!
+  utter_chitchat:
+    - text: chitchat
+  utter_ask_continue:
+    - text: Do you want to continue the quiz?
+  utter_default:
+    - text: Sorry, I didn't understand you, please try input something else
+  utter_greet:
+    - text: Hello! This is dialect bot
+  utter_iamabot:
+    - text: I am a bot, powered by Rasa.
+  utter_dialect_value:
+    - text: On the basis of your answers you belong to one of Three Top Cities {dialect}
+  utter_ask_bug:
+    - text:
+        What do you call the small bug (technically a crustacean) that’s often found
+        under logs and can roll into a little ball?
+  utter_ask_beverage:
+    - text: What do you call a sweet, carbonated beverage?
+  utter_ask_second_person_plural:
+    - text: How do you address a group of two or more people? As in “Are ___ ready to go?”
+  utter_ask_mary_merry_marry:
+    - text: How do you pronounce the words Mary, merry and marry?
+  utter_ask_cot_caught:
+    - text: Do you pronounce "cot" and "caught" different or the same?
+  utter_ask_rain_sun:
+    - text: What do you call it when rain falls while the sun is shining?
+  utter_ask_halloween:
+    - text: What do you call the night before Halloween?
+  utter_ask_sandwich:
+    - text: What do you call the long sandwich that contains cold cuts, lettuce and so on?
+  utter_ask_road_meet_in_circle:
+    - text: What do you call a traffic situation in which several roads meet in a circle?
+  utter_ask_shoes:
+    - text: What do you call the rubber-soled shoes worn in gym class or for athletic activities?
+  utter_ask_highway:
+    - text: What do you call a big road where you can drive fast?
+  utter_ask_yard_sale:
+    - text: What would you call a sale of unwanted items on your porch, in your yard, etc.?
+  utter_ask_rubbernecking:
+    - text: What do you call a traffic jam caused by drivers slowing down to look at an accident?
+  utter_ask_frosting:
+    - text: Do you call the sweet spread that is put on a cake frosting or icing?
+  utter_ask_firefly:
+    - text: What do you call the insect that flies around in the summer and glows in the dark?
+  utter_ask_brew_thru:
+    - text: What do you call a drive-through liquor store?
+  utter_ask_water_fountain:
+    - text: What do you call the thing you drink water from in a school?
+  utter_ask_school_college:
+    - text: What do you call an easy high school or college class?
+  utter_ask_freight:
+    - text: What do you call a large motor vehicle used to carry freight?
+  utter_ask_second_syllabe:
+    - text: How do you pronounce the second syllable of pajamas?
+  utter_ask_wild_cat:
+    - text: What do you call the large, wild cat native to the Americas?
+  utter_ask_crawfish:
+    - text: What do you call the miniature lobster found in lakes and streams?
+
+actions:
+  - detect_dialect
+  - utter_greet
+  - utter_iamabot
+  - utter_dialect_value
+  - utter_start_quiz
+  - utter_slots_values
+  - utter_noworries
+  - utter_ask_bug
+  - utter_ask_beverage
+  - utter_ask_second_person_plural
+  - utter_ask_mary_merry_marry
+  - utter_ask_cot_caught
+  - utter_ask_rain_sun
+  - utter_ask_halloween
+  - utter_ask_sandwich
+  - utter_ask_road_meet_in_circle
+  - utter_ask_shoes
+  - utter_ask_highway
+  - utter_ask_yard_sale
+  - utter_ask_rubbernecking
+  - utter_ask_frosting
+  - utter_ask_firefly
+  - utter_ask_brew_thru
+  - utter_ask_water_fountain
+  - utter_ask_school_college
+  - utter_ask_freight
+  - utter_ask_second_syllabe
+  - utter_ask_wild_cat
+  - utter_ask_crawfish
+  - utter_submit
+  - utter_chitchat
+  - utter_ask_continue
+  - utter_default
+  - utter_goodbye
+  - validate_elicitation_form
+forms:
+  elicitation_form:
+    bug:
+      - type: from_text
+        intent: inform
+    beverage:
+      - type: from_text
+        intent: inform
+    second_person_plural:
+      - type: from_text
+        intent: inform
+    mary_merry_marry:
+      - type: from_text
+        intent: inform
+    cot_caught:
+      - type: from_text
+        intent: inform
+    yard_sale:
+      - type: from_text
+        intent: inform
+    halloween:
+      - type: from_text
+        intent: inform
+    sandwich:
+      - type: from_text
+        intent: inform
+    road_meet_in_circle:
+      - type: from_text
+        intent: inform
+    shoes:
+      - type: from_text
+        intent: inform
+    highway:
+      - type: from_text
+        intent: inform
+    rain_sun:
+      - type: from_text
+        intent: inform
+    rubbernecking:
+      - type: from_text
+        intent: inform
+    frosting:
+      - type: from_text
+        intent: inform
+    firefly:
+      - type: from_text
+        intent: inform
+    brew_thru:
+      - type: from_text
+        intent: inform
+    water_fountain:
+      - type: from_text
+        intent: inform
+    school_college:
+      - type: from_text
+        intent: inform
+    freight:
+      - type: from_text
+        intent: inform
+    second_syllabe:
+      - type: from_text
+        intent: inform
+    wild_cat:
+      - type: from_text
+        intent: inform
+    crawfish:
+      - type: from_text
+        intent: inform
+
+session_config:
+  session_expiration_time: 0
+  carry_over_slots_to_new_session: false
