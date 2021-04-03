@@ -73,3 +73,154 @@ stories:
   - intent: thankyou
   - action: utter_noworries
   - action: utter_goodbye
+- story: Story from Conversation ID 8fc81c479aa142e2ab447b71f2c7c299
+  steps:
+  - intent: greet
+  - action: utter_start_quiz
+  - intent: affirm
+  - action: elicitation_form
+  - active_loop: elicitation_form
+  - slot_was_set:
+    - requested_slot: beverage
+  - intent: inform
+  - action: elicitation_form
+  - slot_was_set:
+    - beverage: soda
+  - slot_was_set:
+    - requested_slot: brew_thru
+  - intent: inform
+  - action: elicitation_form
+  - slot_was_set:
+    - brew_thru: brew thru
+  - slot_was_set:
+    - requested_slot: bug
+  - intent: inform
+  - action: elicitation_form
+  - slot_was_set:
+    - bug: potato bug
+  - slot_was_set:
+    - requested_slot: cot_caught
+  - intent: inform
+  - action: elicitation_form
+  - slot_was_set:
+    - cot_caught: same
+  - slot_was_set:
+    - requested_slot: crawfish
+  - intent: inform
+  - action: elicitation_form
+  - slot_was_set:
+    - crawfish: crawfish
+  - slot_was_set:
+    - requested_slot: firefly
+  - intent: inform
+  - action: elicitation_form
+  - slot_was_set:
+    - firefly: firefly
+  - slot_was_set:
+    - requested_slot: freight
+  - intent: inform
+  - action: elicitation_form
+  - slot_was_set:
+    - freight: semi
+  - slot_was_set:
+    - requested_slot: frosting
+  - intent: inform
+  - action: elicitation_form
+  - slot_was_set:
+    - frosting: frosting
+  - slot_was_set:
+    - requested_slot: halloween
+  - intent: inform
+  - action: elicitation_form
+  - slot_was_set:
+    - halloween: gate night
+  - slot_was_set:
+    - requested_slot: highway
+  - intent: inform
+  - action: elicitation_form
+  - slot_was_set:
+    - highway: highway
+  - slot_was_set:
+    - requested_slot: mary_merry_marry
+  - intent: inform
+  - action: elicitation_form
+  - slot_was_set:
+    - mary_merry_marry: all three are pronounced the same
+  - slot_was_set:
+    - requested_slot: rain_sun
+  - intent: inform
+  - action: elicitation_form
+  - slot_was_set:
+    - rain_sun: sunshower
+  - slot_was_set:
+    - requested_slot: road_meet_in_circle
+  - intent: affirm
+  - action: action_default_fallback
+  - intent: inform
+  - action: elicitation_form
+  - slot_was_set:
+    - road_meet_in_circle: circle
+  - slot_was_set:
+    - requested_slot: rubbernecking
+  - intent: inform
+  - action: elicitation_form
+  - slot_was_set:
+    - rubbernecking: rubbernecking
+  - slot_was_set:
+    - requested_slot: sandwich
+  - intent: inform
+  - action: elicitation_form
+  - slot_was_set:
+    - sandwich: sub
+  - slot_was_set:
+    - requested_slot: school_college
+  - intent: deny
+  - action: action_default_fallback
+  - intent: inform
+  - action: elicitation_form
+  - slot_was_set:
+    - school_college: crypt course
+  - slot_was_set:
+    - requested_slot: second_person_plural
+  - intent: inform
+    entities:
+    - second_person_plural: y'all
+  - action: elicitation_form
+  - slot_was_set:
+    - second_person_plural: y’all
+  - slot_was_set:
+    - requested_slot: second_syllabe
+  - intent: inform
+  - action: elicitation_form
+  - slot_was_set:
+    - second_syllabe: with the vowel in jam
+  - slot_was_set:
+    - requested_slot: shoes
+  - intent: inform
+  - action: elicitation_form
+  - slot_was_set:
+    - shoes: shoes
+  - slot_was_set:
+    - requested_slot: water_fountain
+  - intent: inform
+  - action: elicitation_form
+  - slot_was_set:
+    - water_fountain: bubbler
+  - slot_was_set:
+    - requested_slot: wild_cat
+  - intent: inform
+  - action: elicitation_form
+  - slot_was_set:
+    - wild_cat: mountain lion
+  - slot_was_set:
+    - requested_slot: yard_sale
+  - intent: inform
+  - action: elicitation_form
+  - slot_was_set:
+    - yard_sale: garage sale
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_slots_values
+  - action: detect_dialect
+  - action: utter_dialect_value
