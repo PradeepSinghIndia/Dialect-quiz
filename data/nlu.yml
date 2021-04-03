@@ -1,5 +1,4 @@
 version: "2.0"
-
 nlu:
 - intent: affirm
   examples: |
@@ -293,6 +292,15 @@ nlu:
     - party barn
     - we have these in my area, but we have no special term for them
     - I don't know
+    - mountain lion
+    - crypt course
+    - circle
+    - gut
+    - with the vowel in jam
+    - rotary
+    - all three are pronounced the same
+    - semi
+    - brew through
 - intent: stop
   examples: |
     - ok then you cant help me
@@ -354,4 +362,4 @@ nlu:
     - okay thank you good bye
     - you rock
     - and thats all thank you and good bye
-    - thank you and good bye    
+    - thank you and good bye
