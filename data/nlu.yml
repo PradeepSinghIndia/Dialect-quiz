@@ -31,6 +31,7 @@ nlu:
     - am I talking to a bot?
     - am I talking to a human?
     - are you real?
+    - are you a bot/
 - intent: chitchat
   examples: |
     - can you share your boss with me?
@@ -363,3 +364,5 @@ nlu:
     - you rock
     - and thats all thank you and good bye
     - thank you and good bye
+    - bye
+    - bye bye
