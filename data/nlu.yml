@@ -305,6 +305,10 @@ nlu:
     - all three are pronounced the same
     - semi
     - brew through
+    - mountain cat
+    - marry
+    - truck
+    - jam
 - intent: stop
   examples: |
     - ok then you cant help me
