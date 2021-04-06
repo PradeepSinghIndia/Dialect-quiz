@@ -160,7 +160,7 @@ responses:
   utter_iamabot:
     - text: I am a bot, powered by Rasa.
   utter_dialect_value:
-    - text: On the basis of your answers you belong to one of Three Top Cities {dialect}
+    - text: Here are your results! {dialect}
   utter_ask_bug:
     - text:
         What do you call the small bug (technically a crustacean) that’s often found

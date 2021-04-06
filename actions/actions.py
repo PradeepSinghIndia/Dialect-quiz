@@ -3,11 +3,11 @@ from rasa_sdk import Action, Tracker ,FormValidationAction
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.events import SlotSet
 from joblib import load
-import xgboost as xgb
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 from fuzzywuzzy import process
+from sklearn.neighbors import KNeighborsClassifier
 
 class ValidateElicitationForm(FormValidationAction):
     """Validating our form input using
@@ -301,17 +301,13 @@ class DetectDialect(Action):
                 'Q22':'halloween',
                 'Q23':'water_fountain',
                 'Q24':'firefly'} 
-    def fromat_user_input(self, dispatcher, tracker, domain):
-        """format user input as a pd series with the question key as a row name,
-        should match format test_case before encoding.
-        """
-        user_input=""
-        return(user_input)
     def run(self, dispatcher, tracker, domain):
-        """place holder method for guessing dialect """
+        """get dialect classification """
         # let user know the analysis is running
-        dispatcher.utter_message(template="work_on_it")
+        # dispatcher.utter_message(template="utter_working_on_it")
 
+        # get information from the form & format it
+        # for encoding
         # get information from the form and fromat it
         # for encoding
         slot_question_key= self.slot_key_db()
@@ -320,67 +316,53 @@ class DetectDialect(Action):
             formatted_responses[index]=tracker.get_slot(slot_question_key[index])
         # classify test case
         # TODO: use user input instead of test case
-        d, d_classes, dialect_classifier, test_case = ClassifierPipeline.load_data()
-        input_case_encoded = ClassifierPipeline.encode_data(formatted_responses, d)
-        dialects = ClassifierPipeline.predict_cities(
-            input_case_encoded, dialect_classifier, d)
+        dialects = ClassifierPipeline_knn().get_top_3_knn(formatted_responses)
+        state_1, state_2, state_3 = dialects
+        dialects = f"The state that mostly closely matches your language use is {state_1}, followed by {state_2} and {state_3}"
 
         # always guess Test cities for now
         return [SlotSet("dialect", dialects)]
-
-
-class ClassifierPipeline():
+class ClassifierPipeline_knn:
     """Load in classifier & encoders"""
 
     def name(self) -> Text:
         """Unique identifier of the classfier """
 
-        return "xgboost_dialect"
+        return "5knn_state"
 
-    def load_data():
-        ''' Load in the pretrained model & label encoders.
-        '''
-        d = load("classifier\\label_encoder.joblib.dat")
-        d_classes = load("classifier\\encoder_classes.joblib.dat")
-        dialect_classifier = load("classifier\\dialect_classifier.joblib.dat")
-        test_case = load("classifier\\test_case.joblib.dat")
+    def encode_answers(self, input_data):
+        """Reads in the sample encoded data w/ correct columns and
+        converts input data to the same format"""
+        # read in empty dataframe with correct columns
+        encoding_sample = pd.read_csv("actions\\empty_data_structure.csv")
 
-        # remove target class from test data
-        del test_case["class_target"]
+        # transpose input data
+        input_data = pd.DataFrame(input_data).transpose()
 
-        # update the classes for each of our label encoders
-        for key, item in d.items():
-            d[key]._classes = d_classes[key]
+        # one hot encode input data & standardize column names
+        encoded_input_data = pd.get_dummies(input_data)
+        encoded_input_data.columns = [
+            col.replace(" ", "_") for col in encoded_input_data.columns
+        ]
 
-        return d, d_classes, dialect_classifier, test_case
+        # encode it
+        encoded_data = encoding_sample.align(encoded_input_data, join="left", axis=1)
 
-    def encode_data(input_data, d):
-        ''' Encode our input data with pre-trained label encoders.
-        '''
-        # encode our test data
-        test_case_encoded = input_data
+        # convert na's to 0 (since we're one hot encoding)
+        encoded_data = encoded_data[1].fillna(0)
 
-        for i, row in input_data.items():
-            test_case_encoded[i] = d[i].transform([input_data[i]])
+        return encoded_data
 
-        test_case_encoded = test_case_encoded.apply(lambda x: x[0])
+    def get_top_3_knn(self, data):
+        """Read in the knn model and apply it to correctly formatted sample data"""
+        # read in model
+        state_knn = load("actions\\state_level_knn.joblib.dat")
 
-        return test_case_encoded
+        # encode input data
+        encoded_data = self.encode_answers(input_data=data)
 
-    def predict_cities(test_case_encoded, dialect_classifier, d):
-        ''' Take in encoded data & return top three predicted cities.
-        '''
-        # convert input data to DMatrix fromat
-        test_case_encoded_d = xgb.DMatrix(
-            test_case_encoded.values.reshape((1, -1)))
-        test_case_encoded_d.feature_names = test_case_encoded.index.tolist()
+        pred = state_knn.predict_proba(encoded_data)
+        top_3 = np.argsort(pred, axis=1)[:, -3:]
+        results = [state_knn.classes_[i] for i in top_3]
 
-        # classify using our pre-trained model
-        predictions = dialect_classifier.predict(test_case_encoded_d)
-
-        # return the top 3 classes
-        top_3 = np.argsort(predictions, axis=1)[:, -3:]
-
-        cities = d["class_target"].inverse_transform(top_3[0].tolist())
-
-        return cities
+        return results[0].tolist()
