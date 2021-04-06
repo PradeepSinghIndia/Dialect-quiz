@@ -24,6 +24,7 @@ nlu:
     - yep!
     - yep
     - sure!
+    - yup
 - intent: bot_challenge
   examples: |
     - are you a bot?
@@ -32,6 +33,7 @@ nlu:
     - am I talking to a human?
     - are you real?
     - are you a bot/
+    - are you a bot
 - intent: chitchat
   examples: |
     - can you share your boss with me?
@@ -71,6 +73,7 @@ nlu:
     - Beautiful day, isn't it?
     - What's the weather forecast?
     - Is it quite breezy outside?
+    - how are you?
 - intent: deny
   examples: |
     - no
@@ -326,6 +329,7 @@ nlu:
     - I want to stop
     - quit
     - sotp
+    - i said stop
 - intent: thankyou
   examples: |
     - um thank you good bye
@@ -356,6 +360,7 @@ nlu:
     - thank you bye
     - um okay thank you good bye
     - cool thanks
+    - ok thanks
 - intent: goodbye
   examples: |
     - um thank you good bye
