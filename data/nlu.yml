@@ -309,6 +309,14 @@ nlu:
     - marry
     - truck
     - jam
+    - puma
+    - gym shoes
+    - with vowel in palm
+    - blow-off
+    - lorry
+    - mointain lion
+    - crip course
+    - Mary and merry are pronounced the same, but marry is different
 - intent: stop
   examples: |
     - ok then you cant help me
