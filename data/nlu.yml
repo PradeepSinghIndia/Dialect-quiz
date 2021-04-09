@@ -25,6 +25,7 @@ nlu:
     - yep
     - sure!
     - yup
+    - yes ofcourse
 - intent: bot_challenge
   examples: |
     - are you a bot?
@@ -231,7 +232,6 @@ nlu:
     - kitty-corner
     - kitty cross
     - kitty wampus
-    - a freeway has limited access (no stop lights, no intersections), whereas a highway can have stop lights and intersections
     - a freeway is bigger than a highway
     - a freeway is free (i.e., doesn't charge tolls); a highway isn't
     - expressway
@@ -317,6 +317,9 @@ nlu:
     - mointain lion
     - crip course
     - Mary and merry are pronounced the same, but marry is different
+    - i don't know
+    - pepsi
+    - don't know
 - intent: stop
   examples: |
     - ok then you cant help me
@@ -332,16 +335,12 @@ nlu:
     - you cannot help me with what I want
     - I think you cant help me
     - hm i don't think you can do what i want
-    - stop
-    - stop go back
     - do you get anything?
     - and you call yourself bot company? pff
     - and that's it?
     - nothing else?
-    - I want to stop
     - quit
     - sotp
-    - i said stop
 - intent: thankyou
   examples: |
     - um thank you good bye
