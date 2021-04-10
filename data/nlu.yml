@@ -26,6 +26,7 @@ nlu:
     - sure!
     - yup
     - yes ofcourse
+    - Sure
 - intent: bot_challenge
   examples: |
     - are you a bot?
@@ -35,6 +36,8 @@ nlu:
     - are you real?
     - are you a bot/
     - are you a bot
+    - Can you talk to me
+    - Are you a bot
 - intent: chitchat
   examples: |
     - can you share your boss with me?
@@ -320,6 +323,27 @@ nlu:
     - i don't know
     - pepsi
     - don't know
+    - Yard sale
+    - Mountain lion
+    - Water tank
+    - Shoes
+    - With the vowel in jam
+    - You [guys](second_person_plural)
+    - Crip course
+    - Sub
+    - Rubbernecking
+    - Rotary
+    - Wolf is giving birth
+    - Same
+    - Highway
+    - Gate night
+    - Frosting
+    - Truck
+    - Firefly
+    - Ghhh
+    - Potato bug
+    - Brew through
+    - Soda
 - intent: stop
   examples: |
     - ok then you cant help me
@@ -372,6 +396,7 @@ nlu:
     - um okay thank you good bye
     - cool thanks
     - ok thanks
+    - Ok
 - intent: goodbye
   examples: |
     - um thank you good bye
