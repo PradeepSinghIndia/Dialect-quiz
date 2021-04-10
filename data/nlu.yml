@@ -27,6 +27,7 @@ nlu:
     - yup
     - yes ofcourse
     - Sure
+    - Yes
 - intent: bot_challenge
   examples: |
     - are you a bot?
@@ -90,6 +91,7 @@ nlu:
     - no this does not work for me
     - nope
     - nah
+    - No
 - intent: greet
   examples: |
     - Hi
@@ -121,6 +123,7 @@ nlu:
     - hey bot!
     - hello friend
     - howdy
+    - Welcome
 - intent: inform
   examples: |
     - [potato bug](bug)
@@ -344,6 +347,25 @@ nlu:
     - Potato bug
     - Brew through
     - Soda
+    - Sale
+    - Minati
+    - Tap
+    - Sports shoe
+    - Pajamas
+    - You all
+    - College class
+    - Sandwich
+    - Onlooker
+    - Junction
+    - Sunrain
+    - Different
+    - Expressway
+    - Pre halloween night
+    - Whip cream
+    - Jhinga
+    - Cricket
+    - Liquor shop
+    - Soft drink
 - intent: stop
   examples: |
     - ok then you cant help me
@@ -397,6 +419,7 @@ nlu:
     - cool thanks
     - ok thanks
     - Ok
+    - Thank you
 - intent: goodbye
   examples: |
     - um thank you good bye
@@ -407,3 +430,4 @@ nlu:
     - thank you and good bye
     - bye
     - bye bye
+    - Bye
